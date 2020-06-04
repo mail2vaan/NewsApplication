@@ -1,0 +1,48 @@
+body {
+    font-family: "Source Sans Pro", sans-serif !important;
+}
+.sidebar {
+    box-shadow: 0 5px 5px grey;
+    background-color: #5e6770;
+    height: 100%;
+    position: fixed;
+    z-index: 12;
+    top: 51px;
+    left: 0;
+    color: white;
+}
+.login{
+    margin-top: 100px;
+}
+.content {
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    left: 120px;
+    top: 51px;
+    width: 100%;
+}
+.contentImage img{
+    width: 221px;
+    margin-top: 50px;
+    height: 148px;
+    float: right;
+}
+.pad-0 {
+    padding: 0px;
+}
+.navbar{
+    margin-bottom: 0px;
+}
+.sidebar {
+    ul {
+        li {
+            font-size: 23px;
+            border-bottom: 1px solid gray;
+            padding: 9px;
+            text-align: center;
+            /* font-weight: 400; */
+            text-transform: capitalize;
+        }
+    }
+}
