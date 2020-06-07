@@ -5,11 +5,12 @@ import { MainHeader } from '../MainHeader/index'
 import { MainContent } from '../MainContent/index' 
 import { Footer } from '../Footer/index'
 
-import { userActions } from '../_actions';
+import { userActions,  newsListActions} from '../_actions';
 
 class HomePage extends React.Component {
     componentDidMount() {
         this.props.getUsers();
+        this.props.getNewsList();
     }
 
     handleDeleteUser(id) {
@@ -17,11 +18,11 @@ class HomePage extends React.Component {
     }
 
     render() {
-        const { user, users } = this.props;
+        const { newsList=[] } = this.props;
         return (
             <div className="container">
                 <MainHeader />
-                <MainContent />
+                <MainContent newsList={newsList} />
                 <Footer />
                 {/*<div className="col-md-6 col-md-offset-3">
                 <h1>Hi {user.firstName}!</h1>
@@ -54,12 +55,13 @@ class HomePage extends React.Component {
 }
 
 function mapState(state) {
-    const { users, authentication } = state;
+    const { users, authentication, newsList } = state;
     const { user } = authentication;
-    return { user, users };
+    return { user, users, newsList };
 }
 
 const actionCreators = {
+    getNewsList: newsListActions.fetchNewsList,
     getUsers: userActions.getAll,
     deleteUser: userActions.delete
 }
