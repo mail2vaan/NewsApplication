@@ -3,15 +3,22 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class SubContentNav extends React.Component {
-    
+    constructor(props) {
+        super(props);
+        this.state = { activeTabClassName: "tab1" };
+        this.onSubNavClick = this.onSubNavClick.bind(this);
+      }
+      onSubNavClick(locale, activeTab) {
+        this.setState({activeTabClassName: activeTab});
+        this.props.onSubNavClick(locale);
+      }
     render() {
-        const { onSubNavClick } = this.props;
         return (
             <ul class="nav nav-tabs nav-justified">
-                        <li role="presentation" class="active"><a onClick={() => onSubNavClick('TamilNadu')}>TAMILNADU</a></li>
-                        <li role="presentation"><a onClick={() => onSubNavClick('India')}>INDIA</a></li>
-                        <li role="presentation"><a onClick={() => onSubNavClick('World')}>WORLD</a></li>
-                        <li role="presentation"><a onClick={() =>onSubNavClick('Corona')}>CORONA</a></li>
+                        <li role="presentation" className={(this.state.activeTabClassName === "tab1") ? "active" : ""}><a onClick={() => this.onSubNavClick('TamilNadu', "tab1")}>TAMILNADU</a></li>
+                        <li role="presentation" className={(this.state.activeTabClassName === "tab2") ? "active" : ""}><a onClick={() => this.onSubNavClick('India', "tab2")}>INDIA</a></li>
+                        <li role="presentation" className={(this.state.activeTabClassName === "tab3") ? "active" : ""}><a onClick={() => this.onSubNavClick('World', "tab3")}>WORLD</a></li>
+                        <li role="presentation" className={(this.state.activeTabClassName === "tab4") ? "active" : ""}><a onClick={() =>this.onSubNavClick('Corona', "tab4")}>CORONA</a></li>
                     </ul>
         );
     }

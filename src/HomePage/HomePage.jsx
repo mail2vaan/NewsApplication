@@ -10,8 +10,7 @@ import { userActions,  newsListActions} from '../_actions';
 class HomePage extends React.Component {
     constructor(props) {
         super(props);
-        // Don't call this.setState() here!
-        this.state = { counter: 0 };
+        this.state = {  };
         this.onSubNavClick = this.onSubNavClick.bind(this);
       }
     componentDidMount() {

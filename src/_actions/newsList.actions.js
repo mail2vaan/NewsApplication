@@ -20,7 +20,6 @@ function fetchNewsList (locale) {
           return newsData.local === locale
         }
         const newsList = newsListData.filter(getBasedOnLocale);
-        debugger
         dispatch(fetchNewsListSuccess(newsList))
       })
       .catch(error => {
