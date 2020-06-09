@@ -5,12 +5,13 @@ import { connect } from 'react-redux';
 class SubContentNav extends React.Component {
     
     render() {
+        const { onSubNavClick } = this.props;
         return (
             <ul class="nav nav-tabs nav-justified">
-                        <li role="presentation" class="active"><a href="#">TAMILNADU</a></li>
-                        <li role="presentation"><a href="#">INDIA</a></li>
-                        <li role="presentation"><a href="#">WORLD</a></li>
-                        <li role="presentation"><a href="#">CORONA</a></li>
+                        <li role="presentation" class="active"><a onClick={() => onSubNavClick('TamilNadu')}>TAMILNADU</a></li>
+                        <li role="presentation"><a onClick={() => onSubNavClick('India')}>INDIA</a></li>
+                        <li role="presentation"><a onClick={() => onSubNavClick('World')}>WORLD</a></li>
+                        <li role="presentation"><a onClick={() =>onSubNavClick('Corona')}>CORONA</a></li>
                     </ul>
         );
     }

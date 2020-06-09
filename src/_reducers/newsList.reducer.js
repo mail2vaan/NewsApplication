@@ -12,7 +12,7 @@ export function newsList(state = [], action) {
       };
     case newsListConstants.FETCH_NEWS_LIST_FAILURE:
       return { 
-        error: action.error
+        newsList : [] 
       };
     default:
       return state

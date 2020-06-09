@@ -9,14 +9,18 @@ export const newsListActions = {
     fetchNewsListFailure
 };
 
-function fetchNewsList () {
+function fetchNewsList (locale) {
   return (dispatch) => {
     dispatch(fetchNewsListRequest())
     axios
       .get('https://jsonplaceholder.typicode.com/users')
       .then(response => {
         // response.data is the news List
-        const newsList = newsListData;
+        function getBasedOnLocale (newsData) {
+          return newsData.local === locale
+        }
+        const newsList = newsListData.filter(getBasedOnLocale);
+        debugger
         dispatch(fetchNewsListSuccess(newsList))
       })
       .catch(error => {

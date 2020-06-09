@@ -10,7 +10,7 @@ import { userActions } from '../_actions';
 class MainContent extends React.Component {
     
     render() {
-        const { newsList } = this.props;
+        const { newsList, onSubNavClick } = this.props;
         
         return (
             <div className="col-md-12">
@@ -18,7 +18,7 @@ class MainContent extends React.Component {
                     <SubNav />
                 </div>
                 <div className="col-md-10 content">
-                    <SubContentNav />
+                    <SubContentNav onSubNavClick={onSubNavClick} />
                     <div className="row">
                        <SubContent newsList={newsList} />     
                     </div>

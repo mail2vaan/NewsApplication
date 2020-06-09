@@ -8,13 +8,23 @@ import { Footer } from '../Footer/index'
 import { userActions,  newsListActions} from '../_actions';
 
 class HomePage extends React.Component {
+    constructor(props) {
+        super(props);
+        // Don't call this.setState() here!
+        this.state = { counter: 0 };
+        this.onSubNavClick = this.onSubNavClick.bind(this);
+      }
     componentDidMount() {
         this.props.getUsers();
-        this.props.getNewsList();
+        this.props.getNewsList('TamilNadu');
     }
 
     handleDeleteUser(id) {
         return (e) => this.props.deleteUser(id);
+    }
+
+    onSubNavClick(locale) {
+        this.props.getNewsList(locale);
     }
 
     render() {
@@ -22,7 +32,7 @@ class HomePage extends React.Component {
         return (
             <div className="container">
                 <MainHeader />
-                <MainContent newsList={newsList} />
+                <MainContent newsList={newsList} onSubNavClick={this.onSubNavClick} />
                 <Footer />
                 {/*<div className="col-md-6 col-md-offset-3">
                 <h1>Hi {user.firstName}!</h1>
