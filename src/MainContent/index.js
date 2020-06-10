@@ -1,4 +1,5 @@
 export * from './MainContent';
 export * from './SubContent';
 export * from './SubContentNav';
-export * from './SubNav';
+export * from './SubNavLeft';
+export * from './SubNavRight';

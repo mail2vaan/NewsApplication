@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-class SubNav extends React.Component {
+class SubNavLeft extends React.Component {
     
     render() {
         return (
@@ -17,5 +17,5 @@ class SubNav extends React.Component {
     }
 }
 
-const connectedSubNav = connect(null, null)(SubNav);
-export { connectedSubNav as SubNav };
+const connectedSubNavLeft = connect(null, null)(SubNavLeft);
+export { connectedSubNavLeft as SubNavLeft };

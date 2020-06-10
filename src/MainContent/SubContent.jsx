@@ -20,7 +20,6 @@ class SubContent extends React.Component {
             <div>
                 {newsList.newsList[0].News.map((news) => {
                     return (<div><div className="col-md-12">
-                        <p>{newsList.newsList[0].local}</p>
                         <div className="col-md-8">
                             <h1><a href={news.link} target="_blank">{news.source}</a></h1>
                             <h5 className="title">{news.title}</h5>

@@ -11,6 +11,10 @@ body {
     left: 0;
     color: white;
 }
+.sidebarRight {
+    float: right;
+    left: 1124px;
+}
 .login{
     margin-top: 100px;
 }
@@ -18,9 +22,9 @@ body {
     height: 100%;
     background-color: white;
     position: absolute;
-    left: 120px;
+    left: 105px;
     top: 51px;
-    width: 100%;
+    width: 82%;
 }
 li.active a{
     font-weight: bold;
